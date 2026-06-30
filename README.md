@@ -126,3 +126,7 @@ avrdude -v -patmega328p -carduino -P/dev/ttyACM0 -b115200 -D -Uflash:w:<game>.he
 | RGB LED red | D9 |
 | RGB LED green | D10 |
 | RGB LED blue | D11 |
+
+## Notes
+- Demo videos with sound can be found inside the `/Videos` folder.
+- The original source code of both games can be found in the `/Arduino` folder (it is the .ino file in each respective game folder).

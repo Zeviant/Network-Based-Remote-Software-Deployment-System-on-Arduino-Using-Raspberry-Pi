@@ -14,8 +14,8 @@ The Pi hosts a small Flask web app, stores precompiled `.hex` game binaries, and
 | --- | --- |
 | <img src="Videos/AstralAttack.gif" alt="Astral Attack gameplay" width="420"> | <img src="Videos/Snake.gif" alt="Snake gameplay" width="420"> |
 
-- **Astral Attack 2**: lane-based space shooter with bullets, enemies, scoring, health feedback, and a final sequence.
-- **Snake**: classic Snake on a 128x64 OLED grid with food, growth, collision, score, buzzer feedback, and LED brightness scaling.
+- **Astral Attack 2**: lane-based space shooter with bullets, enemies, scoring, RGB LED health feedback, buzzer feedback, and a final ending sequence.
+- **Snake**: classic Snake on a 128x64 OLED grid with food, growth, collision, score, buzzer feedback, and LED brightness scaling according to score.
 
 ## Hardware
 
@@ -44,7 +44,7 @@ Raspberry Pi hosts Flask server
   -> game runs on the OLED console
 ```
 
-The Arduino Uno cannot keep multiple games loaded at once, so the Raspberry Pi acts as the storage and deployment layer. Selecting a game in the browser automatically starts the flashing process; once it finishes, the Arduino resets and boots straight into that game.
+The Arduino Uno cannot keep multiple games loaded at once, so the Raspberry Pi acts as the storage and deployment layer. Once the user selects a game in the browser, the flashing process begins, and once it finishes, the Arduino restarts and runs the selected game.
 
 ## Repository
 

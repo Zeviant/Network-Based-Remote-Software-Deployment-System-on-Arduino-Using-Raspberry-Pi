@@ -1,8 +1,6 @@
 # Network-Based Remote Software Deployment System on Arduino Using Raspberry Pi
 
-An Arduino Uno game console that uses a Raspberry Pi as its networked game loader.
-
-The Pi hosts a small Flask web app, stores precompiled `.hex` game binaries, and flashes the selected game onto the Arduino over USB with `avrdude`. The Arduino handles the actual gameplay through an OLED display, joystick, button, buzzer, and RGB LED.
+This project simulates a game console using an Arduino Uno and a Raspberry Pi. The Pi hosts a small Flask web app, stores precompiled `.hex` game binaries, and flashes the selected game onto the Arduino over USB with `avrdude`. The Arduino handles the actual gameplay through an OLED display, joystick, button, buzzer, and RGB LED.
 
 <p align="center">
   <img src="Videos/Images_for_readme/img5(1).png" alt="Arduino GamePi web loader" width="900">
@@ -128,8 +126,3 @@ avrdude -v -patmega328p -carduino -P/dev/ttyACM0 -b115200 -D -Uflash:w:<game>.he
 | RGB LED red | D9 |
 | RGB LED green | D10 |
 | RGB LED blue | D11 |
-
-## Notes
-
-- Demo videos are in [Videos/](Videos/)
-- Precompiled Arduino binaries are in [Raspberry Pi/games/](Raspberry%20Pi/games/)

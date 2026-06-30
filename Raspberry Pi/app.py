@@ -8,6 +8,17 @@ BASE_DIR = os.environ.get("GAMECONSOLE_DIR", "/home/pi/gameconsole")
 GAMES_DIR = os.path.join(BASE_DIR, "games")
 THUMB_DIR = os.path.join(BASE_DIR, "static", "thumbnails")
 
+GAME_META = {
+    "AstralAttack2_130": {
+        "pretty": "Astral Attack 2",
+        "thumb": "Astral Attack 2.png",
+    },
+    "Snake": {
+        "pretty": "Snake",
+        "thumb": "Snake.png",
+    },
+}
+
 HTML = """
 <!DOCTYPE html>
 <html>
@@ -128,8 +139,8 @@ HTML = """
 
 <body>
 
-<h1>Arduino GamePi4</h1>
-<h3>Choose a game to flash 🎮</h3>
+<h1>Network-Based Remote Software Deployment System on Arduino Using Raspberry Pi</h1>
+<h3>Choose a game to flash </h3>
 
 <div class="game-grid">
     {% for game in games %}
@@ -170,12 +181,14 @@ def index():
     for filename in os.listdir(GAMES_DIR):
         if filename.endswith(".hex"):
             base = filename.replace(".ino.hex", "")
+            meta = GAME_META.get(base, {})
 
             # Match thumbnail
-            thumb_path = os.path.join(THUMB_DIR, base + ".png")
-            thumb_url = f"/static/thumbnails/{base}.png" if os.path.exists(thumb_path) else None
+            thumb_file = meta.get("thumb", base + ".png")
+            thumb_path = os.path.join(THUMB_DIR, thumb_file)
+            thumb_url = f"/static/thumbnails/{thumb_file}" if os.path.exists(thumb_path) else None
 
-            pretty = base.replace("_", " ").title()
+            pretty = meta.get("pretty", base.replace("_", " ").title())
 
             games.append({
                 "file": filename,

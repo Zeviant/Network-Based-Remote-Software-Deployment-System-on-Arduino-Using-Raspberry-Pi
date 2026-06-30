@@ -10,12 +10,15 @@ The Pi hosts a small Flask web app, stores precompiled `.hex` game binaries, and
 
 ## Games
 
-| Astral Attack 2 | Snake |
-| --- | --- |
-| <img src="Videos/AstralAttack.gif" alt="Astral Attack gameplay" width="420"> | <img src="Videos/Snake.gif" alt="Snake gameplay" width="420"> |
+| Astral Attack 2 |
+| --- |
+| <img src="Videos/AstralAttack.gif" alt="Astral Attack gameplay" width="720"> |
+| Lane-based space shooter with bullets, enemies, scoring, health feedback, and a final sequence. |
 
-- **Astral Attack 2**: lane-based space shooter with bullets, enemies, scoring, health feedback, and a final sequence.
-- **Snake**: classic Snake on a 128x64 OLED grid with food, growth, collision, score, buzzer feedback, and LED brightness scaling.
+| Snake |
+| --- |
+| <img src="Videos/Snake.gif" alt="Snake gameplay" width="720"> |
+| Classic Snake on a 128x64 OLED grid with food, growth, collision, score, buzzer feedback, and LED brightness scaling. |
 
 ## Hardware
 

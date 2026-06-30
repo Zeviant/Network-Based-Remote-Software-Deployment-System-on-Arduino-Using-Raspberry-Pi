@@ -10,17 +10,33 @@ The Pi hosts a small Flask web app, stores precompiled `.hex` game binaries, and
 
 ## Games
 
-| Astral Attack 2 |
-| --- |
-| <img src="Videos/AstralAttack.gif" alt="Astral Attack gameplay" width="720"> |
-| Lane-based space shooter with bullets, enemies, scoring, health feedback, and a final sequence. |
+<table width="100%">
+  <tr>
+    <th>Astral Attack 2</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="Videos/AstralAttack.gif" alt="Astral Attack gameplay" width="720">
+    </td>
+  </tr>
+  <tr>
+    <td>Lane-based space shooter with bullets, enemies, scoring, RGB LED health feedback, buzzer feedback, and a final ending sequence.</td>
+  </tr>
+</table>
 
-| Snake |
-| --- |
-| <img src="Videos/Snake.gif" alt="Snake gameplay" width="720"> |
-| Classic Snake on a 128x64 OLED grid with food, growth, collision, score, buzzer feedback, and LED brightness scaling. |
-- **Astral Attack 2**: lane-based space shooter with bullets, enemies, scoring, RGB LED health feedback, buzzer feedback, and a final ending sequence.
-- **Snake**: classic Snake on a 128x64 OLED grid with food, growth, collision, score, buzzer feedback, and LED brightness scaling according to score.
+<table width="100%">
+  <tr>
+    <th>Snake</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="Videos/Snake.gif" alt="Snake gameplay" width="720">
+    </td>
+  </tr>
+  <tr>
+    <td>Classic Snake on a 128x64 OLED grid with food, growth, collision, score, buzzer feedback, and LED brightness scaling according to score.</td>
+  </tr>
+</table>
 
 ## Hardware
 
@@ -45,7 +61,7 @@ Raspberry Pi hosts Flask server
   -> user chooses a game in the browser
   -> Flask receives the request
   -> Raspberry Pi flashes the matching .hex with avrdude
-  -> Arduino Uno restarts into the selected game
+  -> Arduino Uno resets and starts the selected game
   -> game runs on the OLED console
 ```
 
@@ -55,13 +71,13 @@ The Arduino Uno cannot keep multiple games loaded at once, so the Raspberry Pi a
 
 ```text
 Arduino/
-  AstralAttack2_130/
-  Snake/
+  AstralAttack2_130/      Arduino sketch and exported build files for Astral Attack 2
+  Snake/                  Arduino sketch and exported build files for Snake
 
 Raspberry Pi/
-  app.py
-  games/
-  static/thumbnails/
+  app.py                  Flask web loader that calls avrdude
+  games/                  precompiled .hex files flashed to the Arduino
+  static/thumbnails/      images used by the web loader game cards
 
 Videos/
   gameplay videos, GIFs, and README images

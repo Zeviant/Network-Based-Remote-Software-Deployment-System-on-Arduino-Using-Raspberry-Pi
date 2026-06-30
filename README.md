@@ -1,4 +1,4 @@
-# Network Based Remote Software Deployment System on Arduino Using Raspberry Pi
+# Network-Based Remote Software Deployment System on Arduino Using Raspberry Pi
 
 An Arduino Uno game console that uses a Raspberry Pi as its networked game loader.
 

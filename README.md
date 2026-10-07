@@ -52,6 +52,25 @@ This project simulates a game console using an Arduino Uno and a Raspberry Pi. T
 - RGB LED
 - breadboard, jumper wires, and USB A-to-B cable
 
+## Wiring
+
+<p align="center">
+  <img src="wiring_diagram.png" alt="Arduino wiring diagram" width="760">
+</p>
+
+| Module | Arduino Pin |
+| --- | --- |
+| Joystick X | A0 |
+| Joystick Y | A1 |
+| Joystick switch | D2 |
+| Push button | D4 |
+| OLED SDA | A4 |
+| OLED SCL | A5 |
+| Buzzer | D3 |
+| RGB LED red | D9 |
+| RGB LED green | D10 |
+| RGB LED blue | D11 |
+
 ## How It Works
 
 ```text
@@ -107,25 +126,6 @@ The app expects the Arduino Uno on `/dev/ttyACM0` and flashes with:
 ```bash
 avrdude -v -patmega328p -carduino -P/dev/ttyACM0 -b115200 -D -Uflash:w:<game>.hex:i
 ```
-
-## Wiring
-
-<p align="center">
-  <img src="wiring_diagram.png" alt="Arduino wiring diagram" width="760">
-</p>
-
-| Module | Arduino Pin |
-| --- | --- |
-| Joystick X | A0 |
-| Joystick Y | A1 |
-| Joystick switch | D2 |
-| Push button | D4 |
-| OLED SDA | A4 |
-| OLED SCL | A5 |
-| Buzzer | D3 |
-| RGB LED red | D9 |
-| RGB LED green | D10 |
-| RGB LED blue | D11 |
 
 ## Notes
 - Demo videos with sound can be found inside the `/Videos` folder.
